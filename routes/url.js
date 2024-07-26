@@ -1,7 +1,13 @@
 const express = require("express");
-const { generateNewShortUrl, getAnalytics } = require("../controllers/url");
+const {
+  getHomePage,
+  generateNewShortUrl,
+  getAnalytics,
+} = require("../controllers/url");
 
 const router = express.Router();
+
+router.get("/", getHomePage);
 
 router.post("/", generateNewShortUrl);
 
